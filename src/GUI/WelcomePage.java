@@ -30,7 +30,7 @@ public class WelcomePage extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginButton) {
             dispose(); // Close the welcome window
-            new LoginPage(); // Open the login page
+            new LoginMenu(); // Open the login page
         }
     }
 

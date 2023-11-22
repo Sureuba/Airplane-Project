@@ -3,12 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginPage extends JFrame implements ActionListener {
+public class LoginMenu extends JFrame implements ActionListener {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton loginButton;
 
-    public LoginPage() {
+    public LoginMenu() {
         setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 200);
@@ -63,6 +63,6 @@ public class LoginPage extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new LoginPage());
+        SwingUtilities.invokeLater(() -> new LoginMenu());
     }
 }
