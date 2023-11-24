@@ -59,7 +59,6 @@ CREATE TABLE Crew (
     CrewName VARCHAR(100)
 );
 
-
 GRANT INSERT, DELETE ON Crew TO AdminRole;
 GRANT INSERT, DELETE ON Aircraft TO AdminRole;
 GRANT INSERT, DELETE ON Flights TO AdminRole;
