@@ -1,5 +1,18 @@
+<<<<<<< HEAD:db/Airplane-System.sql
 CREATE TABLE Passenger ( /USER
     PassengerID INT PRIMARY KEY AUTO_INCREMENT,
+=======
+DROP DATABASE IF EXISTS AIRPLANESYSTEM_DB;
+
+CREATE DATABASE AIRPLANESYSTEM_DB;
+
+USE AIRPLANESYSTEM_DB;
+
+
+
+CREATE TABLE Passenger (
+    PassengerID INT PRIMARY KEY,
+>>>>>>> 2bb5c6ac0123eccc3a14d150af7474f4e72af62e:db/AirplaneSystem_db.sql
     Name VARCHAR(100),
     ContactInfo VARCHAR(100),
     Address VARCHAR(100),
@@ -39,8 +52,8 @@ CREATE TABLE FlightSeats (
 
 CREATE TABLE Reservations (
     ReservationID INT PRIMARY KEY,
-    PassengerID INT, -- Foreign Key to Passengers
-    FlightID INT, -- Foreign Key to Flights
+    PassengerID INT, 
+    FlightID INT,
 	ReservationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	IsCancelled BOOLEAN DEFAULT FALSE,
     TicketInsurance BOOL,
