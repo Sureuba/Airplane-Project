@@ -1,5 +1,5 @@
 <<<<<<< HEAD:db/Airplane-System.sql
-CREATE TABLE Passenger ( /USER
+CREATE TABLE Passenger ( //USER
     PassengerID INT PRIMARY KEY AUTO_INCREMENT,
 =======
 DROP DATABASE IF EXISTS AIRPLANESYSTEM_DB;
