@@ -40,13 +40,24 @@ public class Database { //singleton class for single database
         }
     }
 
-    public void doQuery(String query){
+    public void doQuery(String query){ //does query, no returns 
         try {
             Statement statement = jdbc_connection.createStatement();
-            statement.executeUpdate(query);
+            statement.executeQuery(query);
             statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public ResultSet returnQuery(String query){
+        try {
+            Statement statement = jdbc_connection.createStatement();
+            ResultSet result = statement.executeQuery(query);
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
