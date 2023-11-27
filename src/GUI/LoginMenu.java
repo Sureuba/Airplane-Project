@@ -16,14 +16,17 @@ public class LoginMenu extends JFrame implements ActionListener {
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 2));
+        panel.setBackground(Color.white);
 
-        JLabel usernameLabel = new JLabel("Username:");
+        JLabel usernameLabel = new JLabel("Username:"); //asks for username 
+        usernameLabel.setForeground(Color.darkGray);
         panel.add(usernameLabel);
 
-        usernameField = new JTextField();
+        usernameField = new JTextField(); 
         panel.add(usernameField);
 
-        JLabel passwordLabel = new JLabel("Password:");
+        JLabel passwordLabel = new JLabel("Password:"); //asks for password
+        passwordLabel.setForeground(Color.darkGray);
         panel.add(passwordLabel);
 
         passwordField = new JPasswordField();
@@ -34,7 +37,16 @@ public class LoginMenu extends JFrame implements ActionListener {
         panel.add(loginButton);
 
         add(panel);
+        setLookAndFeel();
         setVisible(true);
+    }
+
+    private void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
