@@ -18,7 +18,7 @@ CREATE TABLE PaymentInfo (
     CardNumber VARCHAR(16),
     CardExpYear INT(4),
     CardCSV INT(3),
-    FOREIGN KEY (MemberID) REFERENCES Passenger(PassengerID)
+    FOREIGN KEY (PassengerID) REFERENCES Passenger(PassengerID)
 );
 
 CREATE TABLE Admin(
