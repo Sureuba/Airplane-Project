@@ -1,3 +1,11 @@
+DROP DATABASE IF EXISTS AIRPLANESYSTEM_DB;
+
+CREATE DATABASE AIRPLANESYSTEM_DB;
+
+USE AIRPLANESYSTEM_DB;
+
+
+
 CREATE TABLE Passenger (
     PassengerID INT PRIMARY KEY,
     Name VARCHAR(100),
@@ -38,8 +46,8 @@ CREATE TABLE FlightSeats (
 
 CREATE TABLE Reservations (
     ReservationID INT PRIMARY KEY,
-    PassengerID INT, -- Foreign Key to Passengers
-    FlightID INT, -- Foreign Key to Flights
+    PassengerID INT, 
+    FlightID INT,
 	ReservationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	IsCancelled BOOLEAN DEFAULT FALSE,
     TicketInsurance BOOL,
