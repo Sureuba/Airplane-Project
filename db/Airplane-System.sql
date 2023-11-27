@@ -1,10 +1,11 @@
-CREATE TABLE Passenger (
-    PassengerID INT PRIMARY KEY,
+CREATE TABLE Passenger ( /USER
+    PassengerID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100),
     ContactInfo VARCHAR(100),
     Address VARCHAR(100),
     Email VARCHAR(100),
-    MemberStatus ENUM('Guest', 'Member')
+    MemberStatus ENUM('Guest', 'Member') DEFAULT 'Guest'
+    UNIQUE (Email)
 );
 
 CREATE TABLE PaymentInfo (
