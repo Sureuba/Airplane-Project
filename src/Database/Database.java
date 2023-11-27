@@ -13,7 +13,6 @@ public class Database { //singleton class for single database
     
     private static Database theDatabase;
     private Connection jdbc_connection;
-    private Statement statement;
     private String url = "jdbc:mysql://localhost:3306/AirplaneDatabase";
     private String user = "BigMac";
     private String password = "1234";
@@ -27,17 +26,27 @@ public class Database { //singleton class for single database
 
     public Database getDatabase() { //returns database created
         if(theDatabase == null){
-            Database Data = new Database(url, user, password);
-            theDatabase = Data;
+            theDatabase = new Database(url, user, password);
         }
         return theDatabase; 
     }
 
     public void connect(){
-
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");  //jdbc driver
+            jdbc_connection = DriverManager.getConnection(url, user, password); //create connection
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void query(){
-
+    public void doQuery(String query){
+        try {
+            Statement statement = jdbc_connection.createStatement();
+            statement.executeUpdate(query);
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
